@@ -77,9 +77,12 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request,$blog)
     {
-        //
+        $input = $request->all();
+        $blog = Blog::FindOrFail($blog);
+        $blog->update($input);
+        return redirect('blog');
     }
 
     /**
