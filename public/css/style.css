@@ -1,6 +1,12 @@
-.blog-del{
-    float:right;
+
+
+.btn-margin-right{
+    padding:10px;
+    margin-right:10px;
 }
+
+.blog-del{
+    float:right;}
 
 .jumbotron{
     margin-right:-20px;
