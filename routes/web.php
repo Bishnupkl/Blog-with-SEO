@@ -17,9 +17,14 @@ Auth::routes();
 Route::get('/blog', 'BlogController@index');
 Route::get('/blog/create', 'BlogController@create')->name('blog.create');
 Route::post('/blog/store', 'BlogController@store')->name('blog.store');
+
+//Lets create trash route here;
+Route::get('/blog/trash', 'BlogController@trash')->name('blog.trash');
+Route::get('/blog/trash/{id}/restore', 'BlogController@restore')->name('blog.restore');
+Route::delete('/blog/trash/{id}/permanent-delete', 'BlogController@permanentDelete')->name('blog.permanent-delete');
+
 Route::get('/blog/{id}', 'BlogController@show')->name('blog.show');
 Route::get('/blog/{id}/edit', 'BlogController@edit')->name('blog.edit');
 Route::patch('/blog/{id}/update', 'BlogController@update')->name('blog.update');
 Route::delete('/blog/{id}/delete', 'BlogController@destroy')->name('blog.delete');
-
 Route::get('/home', 'HomeController@index')->name('home');
