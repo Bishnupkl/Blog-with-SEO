@@ -120,5 +120,5 @@ class BlogController extends Controller
         return back();
 
 
-    }
+       }
 }
