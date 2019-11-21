@@ -9,7 +9,7 @@
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="tiltle">Title</label>
-                    <input type="email" name="title" class="form-control" id="title">
+                    <input type="text" name="title" class="form-control" id="title">
                 </div>
                 <div class="form-group">
                     <label for="body">Body</label>

@@ -17,7 +17,7 @@ class CompanyService extends Service
     public function index()
     {
         $company= $this->interface->index();
-        $company.="is nice man";
+        $company.=" is nice man";
         return $company;
 
     }

@@ -6,13 +6,13 @@
                 <h1>{{$blog->title}}</h1>
                 <div class="col-md-12">
                     <div class="btn-group">
-                        <a class="btn btn-primary btn-xs pull-left btn-margin-right btn-margin-right"
+                        <a class="btn btn-primary btn-sm pull-left btn-margin-right btn-margin-right"
                            href="{{route('blog.edit',$blog->id)}}">Edit</a>
 
                         <form  action="{{route('blog.delete',$blog->id)}}" class="blog-del" method="post">
                             {{method_field('delete')}}
                             {{csrf_field()}}
-                            <button type="submit" class="btn btn-danger btn-xs pull-left btn-margin-right btn-margin-right">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm pull-left btn-margin-right btn-margin-right">Delete</button>
                         </form>
                     </div>
                 </div>

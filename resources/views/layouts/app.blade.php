@@ -38,7 +38,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="{{route('blog.create')}}">Crete Blogs</a>
+                            <a href="{{route('admin.index')}}">Admin</a>
                         </li>
                         &nbsp;
                     </ul>
