@@ -28,5 +28,6 @@ Route::get('/blog/{id}/edit', 'BlogController@edit')->name('blog.edit');
 Route::patch('/blog/{id}/update', 'BlogController@update')->name('blog.update');
 Route::delete('/blog/{id}/delete', 'BlogController@destroy')->name('blog.delete');
 
+Route::get('company','CompanyController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
