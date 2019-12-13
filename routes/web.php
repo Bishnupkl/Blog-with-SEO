@@ -32,6 +32,9 @@ Route::get('company','CompanyController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 //admin routes
 
 Route::get('admin', 'AdminController@index')->name('admin.index')->middleware(['admin','auth']);
+
+Route::resource('categories', 'CategoryController');

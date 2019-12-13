@@ -53,7 +53,7 @@ class BlogController extends Controller
     {
         $blog = Blog::FindOrFail($blog);
         return view('blogs.show',compact('blog'));
-
+           
 
     }
 

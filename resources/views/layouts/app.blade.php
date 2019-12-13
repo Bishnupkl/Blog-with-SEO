@@ -74,7 +74,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container-fluid">
         @yield('content')
         </div>
     </div>
