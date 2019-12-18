@@ -17,7 +17,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -39,6 +39,9 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="{{route('admin.index')}}">Admin</a>
+                        </li>
+                        <li>
+                            <a href="{{route('categories.index')}}">Categories</a>
                         </li>
                         &nbsp;
                     </ul>
