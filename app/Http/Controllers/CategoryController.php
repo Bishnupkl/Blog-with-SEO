@@ -36,9 +36,14 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Category $category)
     {
-        //
+        $input = $request->all();
+        $input['slug']=str_slug($request->name);
+
+        if ($category->create($input)) {
+            return redirect('/categories');
+        }
     }
 
     /**
