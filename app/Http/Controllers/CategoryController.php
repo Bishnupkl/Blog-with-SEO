@@ -39,7 +39,7 @@ class CategoryController extends Controller
     public function store(Request $request,Category $category)
     {
         $input = $request->all();
-        $input['slug']=str_slug($request->name);
+        $input['slug']=str_slug($request->name,'-');
 
         if ($category->create($input)) {
             return redirect('/categories');
@@ -80,7 +80,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $input = $request->all();
+        $input['slug']=str_slug($request->name,'-');
+
+        if ($category->update($input)) {
+            return redirect('/categories');
+        }
+
+
     }
 
     /**
@@ -91,6 +99,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return redirect('/categories');
     }
 }
