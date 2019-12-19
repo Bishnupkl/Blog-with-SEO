@@ -38,3 +38,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin', 'AdminController@index')->name('admin.index')->middleware(['admin','auth']);
 
 Route::resource('categories', 'CategoryController');
+
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider')->name('login.facebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback')->name('login.facebook.callabck');

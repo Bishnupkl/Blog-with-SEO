@@ -60,6 +60,12 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="LoginWithSocialLnk">
+                            <ul>
+                                <li class="FaceBook"> <a href="{{route('login.facebook')}}"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a> </li>
+
+                            </ul>
+                        </div>
                     </form>
                 </div>
             </div>

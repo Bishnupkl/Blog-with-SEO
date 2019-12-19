@@ -35,4 +35,16 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => ('574974913067689'),
+        'client_secret' => ('d0cd56612e9350ca6f66ae526e9cbdbc'),
+        'redirect' => 'http://localhost:8000/login/facebook/callback'
+    ],
+
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://localhost:8000/login/github/callback',
+    ],
+
 ];
