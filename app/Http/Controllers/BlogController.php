@@ -71,8 +71,9 @@ class BlogController extends Controller
      */
     public function edit($blog)
     {
+        $categories = Category::latest()->get();
         $blog = Blog::FindOrFail($blog);
-        return view('blogs.edit', ['blog'=>$blog]);
+        return view('blogs.edit', ['blog'=>$blog],['categories'=>$categories]);
     }
 
     /**
@@ -87,6 +88,9 @@ class BlogController extends Controller
         $input = $request->all();
         $blog = Blog::FindOrFail($blog);
         $blog->update($input);
+        if ($request->category_id) {
+            $blog->category()->sync($request->category_id);
+        }
         return redirect('blog');
     }
 

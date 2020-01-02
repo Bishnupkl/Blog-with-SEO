@@ -17,6 +17,13 @@
                     <textarea name="body" id="body"  cols="30"  class="form-control" rows="5">{{$blog->body}}</textarea>
                     {{--                    <input type="text" class="form-control" name="body" id="pwd">--}}
                 </div>
+                <div class="form-group form-check form-check-inline">
+                    {{$blog->category->count() ? 'Current categories':''}} &nbsp;&nbsp;&nbsp;
+                    @foreach($blog->category as $category)
+                        <input type="checkbox" value="{{$category->id}}" name="category_id[]" class="form-check-input") checked>
+                        <label class="form-check-label btn-margin-right" for="category">{{$category->name}}</label>
+                    @endforeach
+                </div>
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
