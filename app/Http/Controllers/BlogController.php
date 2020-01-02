@@ -15,7 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::latest()->get();
         return view('blogs.index',compact('blogs'));
     }
 
@@ -39,7 +39,11 @@ class BlogController extends Controller
     public function store(Request $request,Blog $blog)
     {
         $input = $request->all();
-        if ($blog->create($input)) {
+            $blogs=$blog->create($input);
+        if ($blogs) {
+            if ($request->category_id) {
+                $blogs->category()->sync($request->category_id);
+        }
             return redirect('/blog');
         }
 

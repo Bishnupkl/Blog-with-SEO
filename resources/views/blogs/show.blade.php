@@ -19,6 +19,13 @@
             </div>
             <div class="col-md-12">
                 <p>{{$blog->body}}</p>
+                <hr>
+                <p><b>Category</b>:
+                @foreach($blog->category as $category)
+                {{$category->name}}
+                @endforeach
+                </p>
+
             </div>
         </article>
     </div>
