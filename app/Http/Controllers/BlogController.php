@@ -72,8 +72,17 @@ class BlogController extends Controller
     public function edit($blog)
     {
         $categories = Category::latest()->get();
+        dd($categories);
         $blog = Blog::FindOrFail($blog);
-        return view('blogs.edit', ['blog'=>$blog],['categories'=>$categories]);
+
+        $bc = array();
+        foreach ($blog->category as $c) {
+            $bc[]=$c->id;
+        }
+
+        $filtered = array_except($categories->id, $bc);
+        dd($filtered);
+        return view('blogs.edit', compact('blog','categories','filtered'));
     }
 
     /**
