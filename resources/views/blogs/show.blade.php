@@ -3,6 +3,11 @@
     <div class="container-fluid">
         <article>
             <div class="jumbotron">
+                <div class="col-md-12">
+                    @if($blog->featured_image)
+                        <img src="/images/featured_images/{{$blog->featured_image ? $blog->featured_image : ''}}" alt="{{str_limit($blog->title,50)}}" class="img-responsive featured_image">
+                    @endif
+                </div>
                 <h1>{{$blog->title}}</h1>
                 <div class="col-md-12">
                     <div class="btn-group">
