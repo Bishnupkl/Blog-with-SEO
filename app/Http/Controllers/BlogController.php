@@ -40,6 +40,12 @@ class BlogController extends Controller
     {
         $input = $request->all();
 
+//        meta stuff
+
+        $input['slug'] = str_slug($request->title);
+        $input['meta_title']=str_limit($request->title,55);
+        $input['meta_description']=str_limit($request->body,155);
+
         if ($file=$request->file('featured_image')) {
             $name = uniqid() . $file->getClientOriginalName();
             $file->move('images/featured_images/',$name);
@@ -72,7 +78,7 @@ class BlogController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *
+     *\
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
