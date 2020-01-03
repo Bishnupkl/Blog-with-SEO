@@ -39,7 +39,14 @@ class BlogController extends Controller
     public function store(Request $request,Blog $blog)
     {
         $input = $request->all();
-            $blogs=$blog->create($input);
+
+        if ($file=$request->file('featured_image')) {
+            $name = uniqid() . $file->getClientOriginalName();
+            $file->move('images/featured_images/',$name);
+            $input['featured_image'] = $name;
+        }
+
+        $blogs=$blog->create($input);
         if ($blogs) {
             if ($request->category_id) {
                 $blogs->category()->sync($request->category_id);
@@ -72,16 +79,15 @@ class BlogController extends Controller
     public function edit($blog)
     {
         $categories = Category::latest()->get();
-        dd($categories);
+
         $blog = Blog::FindOrFail($blog);
 
         $bc = array();
         foreach ($blog->category as $c) {
-            $bc[]=$c->id;
+            $bc[]=$c->id-1;
         }
 
-        $filtered = array_except($categories->id, $bc);
-        dd($filtered);
+        $filtered = array_except($categories, $bc);
         return view('blogs.edit', compact('blog','categories','filtered'));
     }
 

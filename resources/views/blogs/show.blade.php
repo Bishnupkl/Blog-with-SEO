@@ -22,7 +22,7 @@
                 <hr>
                 <p><b>Category</b>:
                 @foreach($blog->category as $category)
-                    <span><a href="{{route('categories.show',$category->slug)}}">            {{$category->name}}</a></span>
+                    <span><a href="{{route('categories.show',$category->slug)}}">{{$category->name}}</a></span>
 
                 @endforeach
                 </p>
