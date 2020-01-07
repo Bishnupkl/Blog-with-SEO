@@ -8,8 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>@yield('meta_title') - {{ config('app.name', 'Laravel') }}- Blogs about web Dev</title>
+    <meta name="description" content="@yi">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -17,7 +17,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
+            <div class="container-fluid">   
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
