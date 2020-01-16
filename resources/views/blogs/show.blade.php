@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    @include('partials.meta_dynamic')
+    @section('meta_title'){{$blog->meta_title}}@endsection
+    @section('meta_description'){{$blog->meta_description}}@endsection
+{{--    @include('partials.meta_dynamic')--}}
 
     <div class="container-fluid">
         <article>
@@ -25,7 +27,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <p>{{$blog->body}}</p>
+                {!! $blog->body !!}
                 <hr>
                 <p><b>Category</b>:
                 @foreach($blog->category as $category)

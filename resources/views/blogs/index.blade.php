@@ -4,7 +4,7 @@
     <div class="container">
         @foreach($blogs as $key=>$blog)
         <h2><a href="{{route('blog.show',$blog->id)}}">{{$blog->title}}</a></h2>
-        <p>{{$blog->body}}</p>
+        {!! $blog->body !!}
         @endforeach
     </div>
 @endsection

@@ -20,7 +20,9 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li>
+                    @if(isset($blog))
                     <a href="{{route('blog')}}">Blogs <span class="badge bg-dark text-white">{{$blog->count()}}</span></a>
+                    @endif
                 </li>
                 <li>
                     <a href="{{route('admin.index')}}">Admin</a>
